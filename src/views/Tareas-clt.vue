@@ -24,14 +24,20 @@
                        <v-chip label color="pink" text-color="white" class="ml">                                        
                        <v-icon left></v-icon>
                        TRANSACTIONS
-                        </v-chip>                                             
+                        </v-chip>     
                        <p><a>ID:</a>{{item2.id}}</p> 
-                       <p><a>BUYERS:</a>{{item2.buyerid}}</p> 
+                       <p><a>BUYERS:</a>{{item2.buyeid.id}}</p> 
                        <p><a>IP:</a>{{item2.ip}}</p> 
-                       <p><a>DEVICE:</a>{{item2.device}}</p> 
-                       <p><a>PRODUCTS:</a>{{item2.produtsids}}</p>                   
-                   </v-card-text>                       
-               </v-card>              
+                       <p><a>DEVICE:</a>{{item2.device}}</p>                   
+                         <ul>
+                           <li v-for="(item3, index3 ) in item2.productsids" :key="index3">
+                              <p><a>PRODUCTS:</a>{{item3.id}}</p> 
+                           </li>
+                           </ul>          
+                        
+                   </v-card-text>   
+              </v-card>           
+                  
         </v-col>
       </v-row>
     </v-container>
@@ -51,13 +57,14 @@ export default ({
         'center',
         
       ],
-      transactions:null
+      transactions:null,
+      productos:null
         }
     },   
    mounted () {
     axios
       .get('http://localhost:9000/listart')
-      .then(response => (this.transactions = response.data.data))
+      .then(response => (this.transactions = response.data.data))      
       .catch(e => {console.log(transactions)})  
     },
     
