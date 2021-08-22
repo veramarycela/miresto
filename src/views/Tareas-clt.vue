@@ -26,12 +26,20 @@
                        TRANSACTIONS
                         </v-chip>     
                        <p><a>ID:</a>{{item2.id}}</p> 
-                       <p><a>BUYERS:</a>{{item2.buyeid.id}}</p> 
+                       <p><a>BUYERS:</a><b>ID:</b> {{item2.buyeid.id}} - 
+                       <b> NAME:</b> {{item2.buyeid.name}} - 
+                       <b>AGE:</b> {{item2.buyeid.age}} -
+                       <b>FECHA:</b> {{item2.buyeid.datec}} </p> 
+
                        <p><a>IP:</a>{{item2.ip}}</p> 
-                       <p><a>DEVICE:</a>{{item2.device}}</p>                   
+                       <p><a>DEVICE:</a>{{item2.device}}</p>      
+                        <p><a>FECHA:</a>{{item2.datec}}</p>             
                          <ul>
                            <li v-for="(item3, index3 ) in item2.productsids" :key="index3">
-                              <p><a>PRODUCTS:</a>{{item3.id}}</p> 
+                              <p><a>PRODUCTS:</a><b>ID:</b>{{item3.id}}</p> 
+                              <p><b>NAME:</b>{{item3.name}}</p> 
+                               <p><b>PRICE:</b>{{item3.price}}</p>
+                                <p><b>FECHA:</b>{{item3.datec}}</p>
                            </li>
                            </ul>          
                         
