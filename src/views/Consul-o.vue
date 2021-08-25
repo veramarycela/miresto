@@ -51,17 +51,17 @@
         <p>PRODUCTS PURCHASED BY OTHER BUYERS:</p>
       </v-card-title>
       <v-card-text v-for="(item3, index3 ) in item5" :key="index3">        
-      <ul v-for="(item4, index4 ) in item3.productsids" :key="index4">        
+      <ul v-for="(item4 , index4 ) in item3.productsids " :key="index4">        
         <li>{{item4.name}}</li>        
       </ul>  
       </v-card-text>
     </v-card>
 
-     <!-- <v-card v-if="item6 = uno.filter(comprador =>(comprador.buyeid.id !== idf) )">
+     <!-- <v-card v-if="item6 = uno.filter(comprador =>(comprador.buyeid.id === idf) )">
       <v-card-title >
         <p>SHOPPING WITH THE SAME IP:</p>        
       </v-card-title>
-      <v-card-text v-if ="item7 = item6.filter(t =>(t.ip === item.ip) )">               
+      <v-card-text v-if ="item7 = uno.filter(comprador =>((comprador.buyeid.id !== idf) && (comprador.ip === item6.ip)))">               
       <ul v-for="(item8, index8 ) in item7" :key="index8">        
         <li  v-for="(item9, index9 ) in item8" :key="index9">{{item9.name}}</li>        
       </ul>  
